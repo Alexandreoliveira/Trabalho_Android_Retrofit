@@ -50,7 +50,6 @@ public class CandidataAdapter extends RecyclerView.Adapter<CandidataAdapter.Cand
 
         final Candidata candidata = mCandidatas.get(position);
 
-
         holder.nome.setText(candidata.getNome());
         holder.adicional.setText(candidata.getAdicional());
         holder.foto.setImageURI(candidata.getFoto());

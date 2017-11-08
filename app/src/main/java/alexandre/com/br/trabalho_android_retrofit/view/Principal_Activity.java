@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
+import com.wang.avi.AVLoadingIndicatorView;
+
 import java.util.List;
 
 import alexandre.com.br.trabalho_android_retrofit.R;
@@ -23,6 +25,7 @@ public class Principal_Activity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Toolbar mToolbar;
     private Context context;
+    private AVLoadingIndicatorView avLoadingIndicatorView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,8 @@ public class Principal_Activity extends AppCompatActivity {
         setSupportActionBar(this.mToolbar);
 
         this.recyclerView = (RecyclerView) findViewById(R.id.recycler_principal);
+        this.avLoadingIndicatorView = (AVLoadingIndicatorView) findViewById(R.id.loader_candidatas);
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://binarity.com.br/senac/ws_senac/ws_retrofit_trabalho/")
@@ -50,14 +55,18 @@ public class Principal_Activity extends AppCompatActivity {
                                    Response<List<Candidata>> response) {
                 if (response.isSuccessful()) {
                     List<Candidata> lista = response.body();
+                    avLoadingIndicatorView.hide();
                     CandidataAdapter adapter = new CandidataAdapter(lista);
                     recyclerView.setAdapter(adapter);
+
+                } else {
+                    avLoadingIndicatorView.hide();
                 }
             }
 
             @Override
             public void onFailure(Call<List<Candidata>> call, Throwable t) {
-
+                avLoadingIndicatorView.hide();
             }
         });
 
