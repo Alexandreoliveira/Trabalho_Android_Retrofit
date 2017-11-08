@@ -17,7 +17,7 @@ import alexandre.com.br.trabalho_android_retrofit.model.Candidata;
 import alexandre.com.br.trabalho_android_retrofit.view.Candidata_Activity;
 
 /**
- * Created by projetos1 on 08/11/2017.
+ * Created by Alexandre Meireles Oliveira on 09/11/2017.
  */
 
 public class CandidataAdapter extends RecyclerView.Adapter<CandidataAdapter.CandidataViewHolder> {
@@ -29,9 +29,12 @@ public class CandidataAdapter extends RecyclerView.Adapter<CandidataAdapter.Cand
         this.mCandidatas = mCandidatas;
     }
 
-    private void goPerfilCandidata(Context context, long uid) {
+    private void goPerfilCandidata(Context context, Candidata candidata) {
         Intent intent = new Intent(context, Candidata_Activity.class);
-        intent.putExtra("uid", uid);
+        intent.putExtra("id", candidata.getId());
+        intent.putExtra("nome", candidata.getNome());
+        intent.putExtra("adicional", candidata.getAdicional());
+        intent.putExtra("foto", candidata.getFoto());
         context.startActivity(intent);
     }
 
@@ -55,7 +58,7 @@ public class CandidataAdapter extends RecyclerView.Adapter<CandidataAdapter.Cand
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goPerfilCandidata(view.getContext(), candidata.getId());
+                goPerfilCandidata(view.getContext(), candidata);
             }
         });
     }

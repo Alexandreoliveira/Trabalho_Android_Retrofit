@@ -1,7 +1,7 @@
 package alexandre.com.br.trabalho_android_retrofit.model;
 
 /**
- * Created by projetos1 on 08/11/2017.
+ * Created by Alexandre Meireles Oliveira on 09/11/2017.
  */
 
 public class Candidata {
