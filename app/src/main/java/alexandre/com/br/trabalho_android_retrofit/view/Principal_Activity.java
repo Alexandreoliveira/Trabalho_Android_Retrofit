@@ -44,7 +44,6 @@ public class Principal_Activity extends AppCompatActivity {
         this.recyclerView.setLayoutManager(linearLayoutManager);
         this.avLoadingIndicatorView = (AVLoadingIndicatorView) findViewById(R.id.loader_candidatas);
 
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://binarity.com.br/ws_senac/")
                 .addConverterFactory(GsonConverterFactory.create())
