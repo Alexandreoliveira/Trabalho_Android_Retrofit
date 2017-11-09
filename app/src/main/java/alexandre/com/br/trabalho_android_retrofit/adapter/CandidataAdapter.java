@@ -52,6 +52,11 @@ public class CandidataAdapter extends RecyclerView.Adapter<CandidataAdapter.Cand
 
         holder.nome.setText(candidata.getNome());
         holder.numero.setText(candidata.getId());
+        if(Integer.parseInt(candidata.getVotos()) > 1) {
+            holder.votos.setText(candidata.getVotos() + " Votos");
+        }else{
+            holder.votos.setText(candidata.getVotos() + " Voto");
+        }
         holder.adicional.setText(candidata.getAdicional());
         holder.foto.setImageURI(candidata.getFoto());
 
@@ -72,6 +77,7 @@ public class CandidataAdapter extends RecyclerView.Adapter<CandidataAdapter.Cand
 
         protected TextView nome;
         protected TextView numero;
+        protected TextView votos;
         protected TextView adicional;
         protected SimpleDraweeView foto;
 
@@ -79,6 +85,7 @@ public class CandidataAdapter extends RecyclerView.Adapter<CandidataAdapter.Cand
             super(itemView);
             this.nome = itemView.findViewById(R.id.nome_recycler);
             this.numero = itemView.findViewById(R.id.numCandidata);
+            this.votos = itemView.findViewById(R.id.votos_recycler);
             this.foto = itemView.findViewById(R.id.foto_recycler);
             this.adicional = itemView.findViewById(R.id.adicional_recycler);
 

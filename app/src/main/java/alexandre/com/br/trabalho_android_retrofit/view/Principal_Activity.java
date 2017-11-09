@@ -39,8 +39,8 @@ public class Principal_Activity extends AppCompatActivity {
         setSupportActionBar(this.mToolbar);
 
         this.recyclerView = (RecyclerView) findViewById(R.id.recycler_principal);
-        this.recyclerView.setHasFixedSize(true);
-        this.linearLayoutManager = new LinearLayoutManager(this);
+        this.linearLayoutManager = new LinearLayoutManager(this.context);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         this.recyclerView.setLayoutManager(linearLayoutManager);
         this.avLoadingIndicatorView = (AVLoadingIndicatorView) findViewById(R.id.loader_candidatas);
 
