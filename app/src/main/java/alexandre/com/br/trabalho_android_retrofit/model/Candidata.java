@@ -6,13 +6,16 @@ package alexandre.com.br.trabalho_android_retrofit.model;
 
 public class Candidata {
 
-    private long id;
+    private String id;
     private String nome;
     private String adicional;
-    private long votos;
+    private String votos;
     private String foto;
 
-    public Candidata(long id, String nome, String adicional, long votos, String foto) {
+    public Candidata() {
+    }
+
+    public Candidata(String id, String nome, String adicional, String votos, String foto) {
         this.id = id;
         this.nome = nome;
         this.adicional = adicional;
@@ -20,11 +23,11 @@ public class Candidata {
         this.foto = foto;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -44,11 +47,11 @@ public class Candidata {
         this.adicional = adicional;
     }
 
-    public long getVotos() {
+    public String getVotos() {
         return votos;
     }
 
-    public void setVotos(long votos) {
+    public void setVotos(String votos) {
         this.votos = votos;
     }
 

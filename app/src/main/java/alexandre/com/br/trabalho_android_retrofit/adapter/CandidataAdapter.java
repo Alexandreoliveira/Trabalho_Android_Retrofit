@@ -51,6 +51,7 @@ public class CandidataAdapter extends RecyclerView.Adapter<CandidataAdapter.Cand
         final Candidata candidata = mCandidatas.get(position);
 
         holder.nome.setText(candidata.getNome());
+        holder.numero.setText(candidata.getId());
         holder.adicional.setText(candidata.getAdicional());
         holder.foto.setImageURI(candidata.getFoto());
 
@@ -70,12 +71,14 @@ public class CandidataAdapter extends RecyclerView.Adapter<CandidataAdapter.Cand
     protected static class CandidataViewHolder extends RecyclerView.ViewHolder {
 
         protected TextView nome;
+        protected TextView numero;
         protected TextView adicional;
         protected SimpleDraweeView foto;
 
         public CandidataViewHolder(View itemView) {
             super(itemView);
             this.nome = itemView.findViewById(R.id.nome_recycler);
+            this.numero = itemView.findViewById(R.id.numCandidata);
             this.foto = itemView.findViewById(R.id.foto_recycler);
             this.adicional = itemView.findViewById(R.id.adicional_recycler);
 

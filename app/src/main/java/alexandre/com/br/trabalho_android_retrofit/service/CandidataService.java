@@ -16,7 +16,7 @@ public interface CandidataService {
 
 
     // nome do WebService que irá retornar a lista de dados
-    @GET("lista_carros.php")
+    @GET("service")
     Call<List<Candidata>> getCandidatas();
 
     // no POST deve-se colocar o nome do WebService PHP que irá receber os dados

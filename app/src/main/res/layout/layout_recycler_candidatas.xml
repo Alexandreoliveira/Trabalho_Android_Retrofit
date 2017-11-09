@@ -17,6 +17,16 @@
         fresco:placeholderImage="@drawable/loadimage"
         fresco:roundedCornerRadius="4dp" />
 
+    <TextView
+        android:id="@+id/numCandidata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/foto_recycler"
+        android:layout_margin="8dp"
+        android:textColor="@color/colorDark"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
